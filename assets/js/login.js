@@ -51,9 +51,11 @@ $(function() {
   })
 
   // 监听登录表单的提交事件
-  $('#form_login').submit(function(e) {
+  $('#form_login').submit(function (e) {
+    console.log('ok');
     // 阻止默认提交行为
     e.preventDefault()
+    var data = $(this).serialize()
     $.ajax({
       url: '/api/login',
       method: 'POST',
